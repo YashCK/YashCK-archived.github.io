@@ -67,11 +67,68 @@ h4{
     font-size: 50px
   }
 
+  #display {
+    width: 1350px;
+    height: 250px;
+    background-color: ##180de5;
+    margin: 0 auto;
+    font-size: 40px;
+    padding: 30px;
+  }
+
 </style>
 </head>
 
 <body>
 <h1>Hi I am Yash!</h1>
+
+<button id="click">Change background to Another Image</button>
+<script type="text/javascript">
+	var button = document.getElementById("click");
+	var body = document.getElementsByTagName("body");
+
+	button.addEventListener("click", function () {
+		body[0].style.backgroundImage = "url('http://www.mountaindome.co.uk/wp-content/uploads/2016/10/mountain-dome-background.jpg')"
+	});
+
+</script>
+
+<button id="replacebutton" onclick="replaceAll()">Replace all</button>
+<button id="colorbutton" onclick="changeColor()">Change color</button>
+<button id="wordbutton" onclick="addWords()">Add words</button>
+<label for="textinput">Text here:</label>
+
+<input id="textinput" type="text"></input>
+
+<div id="display"> </div>
+
+<script>
+
+var display =   document.getElementById("display");
+var textinput =   document.getElementById("textinput");
+
+var colorOfDisplay = "#180de5";
+
+function replaceAll() {
+  display.innerHTML = textinput.value;
+}
+
+function addWords() {
+  display.innerHTML = display.innerHTML + textinput.value;
+}
+
+function changeColor() {
+  if (colorOfDisplay == "#180de5") {
+    display.style.backgroundColor = "#180de5";
+    colorOfDisplay = "#180de5";
+  } else if (colorOfDisplay = "#180de5") {
+    display.style.backgroundColor = "#0ca5af";
+    colorOfDisplay = "#0ca5af";
+  }
+}
+</script>
+
+
 
 <h2 class="title" id="whoami"> Who Am I? </h2>
 
